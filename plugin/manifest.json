@@ -1,0 +1,25 @@
+{
+	"name": "GitPaid.me",
+	"version": "0",
+	"description": "Crowdsourcing to fix Github issues.",
+	"background": {
+		"page": "content/background.html"
+	},
+	"manifest-version": 2,
+	"browser_action": {
+		"default_title": "GitPaid.me",
+	},
+	"content_scripts": [{
+		"js": "scripts/content.js",
+		"matches": ["http://*/*", "https://*/*"]
+	}],
+	"permissions": [
+		"tabs",
+		"webNavigation",
+		"clipboardWrite"
+	],
+	"web_accessable_resources": [
+		"*.png",
+		"*.mp3"
+	]
+}
