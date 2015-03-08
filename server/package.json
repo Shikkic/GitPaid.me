@@ -1,0 +1,22 @@
+{
+  "name": "GitPaid",
+  "version": "1.0.0",
+  "description": "Crowdsource to get Github issues fixed faster, and maybe even get paid to do it!",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.12.2",
+    "fs": "0.0.2",
+    "http": "0.0.0",
+    "mongodb": "^1.4.33",
+    "morgan": "^1.5.1",
+    "promise": "^6.1.0",
+    "request": "^2.53.0",
+    "require": "^2.4.17"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
