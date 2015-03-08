@@ -5,3 +5,87 @@
  * @author Vuk Petrovic
  * Built for HackNY with love! 
 */
+
+#appWrapper {
+	width: 91.5%;
+	margin-left: 8.5%;
+	margin-top: 20px;
+	background-color: red;
+}
+
+.gitPaidWrapper {
+	float: left;
+	width: 45%;
+	height: auto;
+	padding-left: 1.25%;
+	padding-right: 1.25%;
+}
+
+.gitPaidButton {
+	cursor: hand;
+	cursor: pointer;
+	width: 80%;
+	height: 40px;
+	border-radius: 5px;
+	margin-left: 10%;
+}
+
+.gitPaidButton:hover {
+	-webkit-filter: brightness(1.2);
+	filter: brightness(1.2);
+}
+
+.gitPaidButtonLabel {
+	font-size: 20px;
+	color: white;
+	font-family: 'Roboto Condensed', sans-serif;
+	margin: 0 auto;
+	padding-top: 10px;
+	box-sizing: border-box;
+}
+
+#fundButton {
+	margin-top: 10px;
+	background: #9ef282; /* Old browsers */
+	background: -moz-linear-gradient(top,  #9ef282 0%, #54b854 65%, #54b854 90%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9ef282), color-stop(65%,#54b854), color-stop(90%,#54b854)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #9ef282 0%,#54b854 65%,#54b854 90%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #9ef282 0%,#54b854 65%,#54b854 90%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #9ef282 0%,#54b854 65%,#54b854 90%); /* IE10+ */
+	background: linear-gradient(to bottom,  #9ef282 0%,#54b854 65%,#54b854 90%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9ef282', endColorstr='#54b854',GradientType=0 ); /* IE6-9 */
+}
+
+#fundLabel {
+	width: 147px;
+}
+
+#requestButton {
+	margin-top: 25px;
+	background: #fce1c9; /* Old browsers */
+	background: -moz-linear-gradient(top,  #fce1c9 0%, #e89543 90%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fce1c9), color-stop(90%,#e89543)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #fce1c9 0%,#e89543 90%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #fce1c9 0%,#e89543 90%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #fce1c9 0%,#e89543 90%); /* IE10+ */
+	background: linear-gradient(to bottom,  #fce1c9 0%,#e89543 90%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fce1c9', endColorstr='#e89543',GradientType=0 ); /* IE6-9 */
+}
+
+#requestLabel {
+	width: 178px;
+}
+
+#descArea {
+	width: 80%;
+	height: 100px;
+	margin-left: 10%;
+}
+
+#descriptionText {
+	color: #8D8D8D;
+	font-size: 15px;
+	font-family: 'Roboto Condensed', sans-serif;
+	width: 182px;
+	margin: 0 auto;
+}

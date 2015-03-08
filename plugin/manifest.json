@@ -3,14 +3,15 @@
 	"version": "0",
 	"description": "Crowdsourcing to fix Github issues.",
 	"background": {
-		"page": "content/background.html"
+		"page": "./content/background.html"
 	},
-	"manifest-version": 2,
+	"manifest_version": 2,
 	"browser_action": {
-		"default_title": "GitPaid.me",
+		"default_title": "GitPaid.me"
 	},
 	"content_scripts": [{
-		"js": "scripts/content.js",
+		"js": ["scripts/content.js"],
+		"css": ["assets/css/app.css"],
 		"matches": ["http://*/*", "https://*/*"]
 	}],
 	"permissions": [
@@ -18,8 +19,9 @@
 		"webNavigation",
 		"clipboardWrite"
 	],
-	"web_accessable_resources": [
+	"web_accessible_resources": [
 		"*.png",
-		"*.mp3"
+		"*.mp3",
+		"*.css"
 	]
 }
