@@ -21,7 +21,7 @@ MongoClient.connect("mongodb://localhost:27017/test", function(err, db) {
 app.use(morgan('dev'));
 
 //require our batch-updates
-//require('./app/batch.js')(app,request,db);
+require('./app/batch.js')(app,request,db);
 
 //require our routes
 require('./app/routes.js')(app,request,db);
