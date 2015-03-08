@@ -1,9 +1,9 @@
 var express = require('express');
 var app = express();
 var http = require('http');
-var https = requre('https');
+var https = require('https');
 var request = require('request');
-var MongoClient = require('mongodb').MongoCLient;
+var MongoClient = require('mongodb').MongoClient;
 var fs = require('fs');
 
 var morgan = require('morgan');
@@ -21,7 +21,7 @@ MongoClient.connect("mongodb://localhost:27017/test", function(err, db) {
 app.use(morgan('dev'));
 
 //require our batch-updates
-require('./app/batch.js')(app,request,db);
+//require('./app/batch.js')(app,request,db);
 
 //require our routes
 require('./app/routes.js')(app,request,db);
@@ -32,7 +32,7 @@ http.createServer(app).listen(80, function(){
 });
 
 //Create our https server
-http.createServer(options, app, function(req, res){
+https.createServer(options, app, function(req, res){
     console.log("https");
     res.writeHead(200);
     res.end("Hello world\n");

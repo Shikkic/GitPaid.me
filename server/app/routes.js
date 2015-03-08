@@ -13,11 +13,13 @@ module.exports = function (app,request,db) {
         var params = req.param('url');
         //check to see if the doc exists
         collection.findOne({url:params}, function(err, document){
-            if((!err)&&(document!=null))){
+            if((!err)&&(document!=null)){
                 //if it exists return the document
                 res.status(200).send(document);
             }else{
                 res.status(200).send({'exists': 'false'});
+            }
+        });
     });
 
     //FUNDING A PROJECT listens if funds are sent on an issue
@@ -36,8 +38,9 @@ module.exports = function (app,request,db) {
                     collection.update({apiURL:apiURL}, {$set: {sponsorName: sponsorName, total: (document.total + amount)}}, function(err, result){});
                 }else{
                     //create a new db entry
+                    console.log("In the else");
                     getInfoFromGit(apiURL, request, collection, function(){
-                        collection.update({apiURL: apiURL}, {$set: {sponsorName: sponsorName, total: amount}}, function(err, result){}):
+                        collection.update({apiURL: apiURL}, {$set: {sponsorName: sponsorName, total: amount}}, function(err, result){});
                     });
                 }
             });
@@ -59,11 +62,11 @@ function generateKey(){
 
     var digits = [dig1, dig2, dig3, dig4, dig5, dig6];
     
-    ar alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",     "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C    ", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",    "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    var alpha = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",     "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", "A", "B", "C    ", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R",    "S", "T", "U", "V", "W", "X", "Y", "Z"];
 
     var key = "";
 
-    for(var i = 0; i< digits.length: i++){
+    for(var i = 0; i< digits.length; i++){
         if(digits[i] > 51){
             digits[i] = 61 - digits[i];
         }else{
@@ -82,15 +85,18 @@ function getInfoFromGit(gitUrl, request, collection, cb){
             'User-Agent': 'Shikkic'
         }
     };
+    
+    console.log(collection);
 
-    request.get(options, function(error, response, body, collection){
+    request.get(options, function(error, response, body){
         if(!error){
             var data = JSON.parse(body);
             var key = generateKey();
+            console.log(collection);
             collection.insert({
-                url:data.html_url
+                url:data.html_url,
                 apiURL: data.url,
-                open.data.state,
+                open: data.state,
                 total:0,
                 exists: true,
                 sponsorName: ' ',
